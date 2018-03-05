@@ -45,11 +45,10 @@ router.post('/events', (req, res) => {
   const Op = Sequelize.Op;
 
   Event.create(event, {
+      
+      endDate: {[Op.gt]:{startDate: {[Op.gt]: new Date()}}}
 
-    startDate: {[Op.gt]: new Date()}
-
-
-})
+    })
     .then(entity => {
       res.status(201)
       res.json(entity)
