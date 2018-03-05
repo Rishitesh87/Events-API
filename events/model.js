@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../db')
+// const sequelize = require('../models').sequelize
 
 const Event = sequelize.define('event', {
   title: {
@@ -15,7 +16,7 @@ const Event = sequelize.define('event', {
     allowNull: false
   },
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
 },
   tableName: 'Events',

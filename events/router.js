@@ -9,7 +9,11 @@ router.get('/', function(req, res){
 
 router.get('/events', (req, res) => {
   Event.findAll({
-    attributes: ['title']
+    where: {
+      startDate: {
+        $gte: new Date()
+      }},
+    attributes: ['title', 'startDate', 'endDate']
   })
     .then(result => {
       res.json(result)
