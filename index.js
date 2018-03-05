@@ -1,6 +1,6 @@
 const express = require('express')
 const Sequelize = require('sequelize')
-
+const bodyParser = require('body-parser')
 const eventsRouter = require('./events/router')
 
 const app = express()
@@ -14,4 +14,5 @@ app.use(function(req, res, next) {
   next()
 })
 
+app.use(bodyParser.json())
 app.use(eventsRouter)

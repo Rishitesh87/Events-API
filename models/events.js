@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     startDate: DataTypes.DATEONLY,
     endDate: DataTypes.DATEONLY,
-    description: DataTypes.STRING
+    description: DataTypes.TEXT
   }, {});
   Events.associate = function(models) {
     // associations can be defined here
